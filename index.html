@@ -38,7 +38,10 @@
     <h1>
       <!-- <img src="logo.svg" width="40"> -->
       CWB Ecard Generator</h1>
-    <div id="create">
+      <p>H.</p>
+    
+      
+      <div id="create">
       <h2>Design your card</h2>
       <textarea id="message" rows=7 cols=20 placeholder="Write your personal message here." onchange="show_preview()" onkeyup="show_preview()"></textarea><br>
       <input type="text" id="recipient" size="25" placeholder="Recipient Name" onchange="show_preview()" onkeyup="show_preview()"><br>
@@ -62,7 +65,7 @@
       <div id="select_bg">&nbsp;</div>
     </div>
 
-    <button type="button" onclick="toggle_preview()">Toggle preview</button> <label for="modal_1" class="button success">Import</label> <label for="modal_2" class="button warning">Help</label>
+    <button type="button" onclick="toggle_preview()">Toggle preview</button>
 
     <div class="modal">
       <input id="modal_1" type="checkbox">
@@ -80,7 +83,7 @@
       </article>
     </div>
 
-    <div class="modal">
+    <!-- <div class="modal">
       <input id="modal_2" type="checkbox">
       <label for="modal_2" class="overlay"></label>
       <article>
@@ -98,7 +101,7 @@
           <p>The card generation and retrieval process is done entirely locally, so none of the card contents is ever stored anywhere on any server.</p>
         </section>
       </article>
-    </div>
+    </div> -->
 
     <div id="card_url">&nbsp;</div>
   </span>
