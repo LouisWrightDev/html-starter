@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      {
+          box-sizing: border-box;
+      }
+      /* Set additional styling options for the columns*/
+      .column {
+      float: left;
+      width: 50%;
+      }
+  
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-    <title>Open Ecard Generator - Design your own electronic greeting card!</title>
+    <title>CWB Ecard Generator</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -19,13 +35,14 @@
 
   <body onload="load_ready()">
 
-    <h1><img src="logo.svg" width="40"> Open Ecard Generator</h1>
+    <h1>
+      <!-- <img src="logo.svg" width="40"> -->
+      CWB Ecard Generator</h1>
     <div id="create">
-      <h2>Design card</h2>
-      <textarea id="message" rows=7 cols=20 placeholder="Write your message here." onchange="show_preview()" onkeyup="show_preview()"></textarea><br>
-
-      <input type="text" id="recipient" size="25" placeholder="Recipient" onchange="show_preview()" onkeyup="show_preview()"><br>
-      <input type="text" id="sender" size="25" placeholder="Sender" onchange="show_preview()" onkeyup="show_preview()"><br>
+      <h2>Design your card</h2>
+      <textarea id="message" rows=7 cols=20 placeholder="Write your personal message here." onchange="show_preview()" onkeyup="show_preview()"></textarea><br>
+      <input type="text" id="recipient" size="25" placeholder="Recipient Name" onchange="show_preview()" onkeyup="show_preview()"><br>
+      <input type="text" id="sender" size="25" placeholder="Sender Name" onchange="show_preview()" onkeyup="show_preview()"><br>
       <input type="text" id="image_url" size="25" placeholder="Image url" onchange="show_preview()" onkeyup="show_preview()"><br>
       <div id="select_ic">&nbsp;</div>
 
@@ -84,6 +101,8 @@
     </div>
 
     <div id="card_url">&nbsp;</div>
+  </span>
+</div>
 
     <br>
     <div id="preview_container">
@@ -96,9 +115,9 @@
           </center>
         </div>
       </div>
-    </div>
+  </div>
+
     <footer>
-      Source <a href="https://github.com/dohliam/ecards">available on GitHub</a>.
     </footer>
   </body>
 </html>
