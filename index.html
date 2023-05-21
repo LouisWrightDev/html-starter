@@ -1,22 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      {
-          box-sizing: border-box;
-      }
-      /* Set additional styling options for the columns*/
-      .column {
-      float: left;
-      width: 50%;
-      }
-  
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }
-      </style>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
     <title>CWB Ecard Generator</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -35,15 +20,14 @@
 
   <body onload="load_ready()">
 
-    <h1>
-      <!-- <img src="logo.svg" width="40"> -->
-      CWB Ecard Generator</h1>
+      <img src="logo.png" width="300">
+      <h2>eCard Creator</h2>
       <p>H.</p>
     
-      
+
       <div id="create">
       <h2>Design your card</h2>
-      <textarea id="message" rows=7 cols=20 placeholder="Write your personal message here." onchange="show_preview()" onkeyup="show_preview()"></textarea><br>
+      <textarea id="message" rows=5 cols=20 placeholder="Write your personal message here." onchange="show_preview()" onkeyup="show_preview()"></textarea><br>
       <input type="text" id="recipient" size="25" placeholder="Recipient Name" onchange="show_preview()" onkeyup="show_preview()"><br>
       <input type="text" id="sender" size="25" placeholder="Sender Name" onchange="show_preview()" onkeyup="show_preview()"><br>
       <input type="text" id="image_url" size="25" placeholder="Image url" onchange="show_preview()" onkeyup="show_preview()"><br>
@@ -119,6 +103,7 @@
         </div>
       </div>
   </div>
+
 
     <footer>
     </footer>
