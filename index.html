@@ -31,6 +31,10 @@
         Make a donation
     </button>
 
+    <!-- collumn -->
+    <div class="row">
+      <div class="column">
+
       <div id="create">
       <h2>Design your card</h2>
       <textarea id="message" rows=5 cols=20 placeholder="Write your personal message here." onchange="show_preview()" onkeyup="show_preview()"></textarea><br>
@@ -64,7 +68,7 @@
       <div id="select_bg">&nbsp;</div>
     </div>
 
-    <button type="button" onclick="toggle_preview()">Toggle preview</button>
+    <!-- <button type="button" onclick="toggle_preview()">Toggle preview</button> -->
 
     <div class="modal">
       <input id="modal_1" type="checkbox">
@@ -106,7 +110,9 @@
   </span>
 </div>
 
-    <br>
+</div>
+<div class="column">
+
     <div id="preview_container">
       <h2>Preview card</h2>
       <div id="card_container">
@@ -118,7 +124,9 @@
         </div>
       </div>
   </div>
-
+  
+</div>
+</div>
 
     <footer>
     </footer>
