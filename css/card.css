@@ -7,10 +7,14 @@ body {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  gap: 2rem;
+  padding: 0 2rem 2rem 2rem;
+}
+.column {
+  width: 100%;
 }
 #create {
-  width: 50vw;
-  max-width: 600px;
+  width: 100%;
 }
 #card_image {
   margin: 25px;
@@ -18,7 +22,7 @@ body {
 }
 #card_container {
   border: 2px solid black;
-  width: 60vw;
+  width: 100%;
   min-height: 50vh;
   margin-top: 5px;
   padding: 7px;
@@ -39,9 +43,13 @@ button {
 @media (min-width: 40.0rem) {
   .wrapper {
     flex-direction: row;
+    align-items: start;
+  }
+  .column {
+    width: 100%;
   }
   #card_container {
-    width: 30vw;
+    width: 100%;
     min-height: 80vh;
     font-size: 2vw;
   }
