@@ -3,8 +3,10 @@ body {
 }
 .wrapper {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: space-around;
+  align-items: center;
 }
 #create {
   width: 50vw;
@@ -35,6 +37,9 @@ button {
 
 /* Larger than mobile screen */
 @media (min-width: 40.0rem) {
+  .wrapper {
+    flex-direction: row;
+  }
   #card_container {
     width: 30vw;
     min-height: 80vh;
