@@ -1,92 +1,143 @@
 <!DOCTYPE html>
 <html>
-  <head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>CWB Ecard Generator</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+		<link rel="manifest" href="site.webmanifest" />
+		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#ffc40d" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="stylesheet" type="text/css" href="css/picnic.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/card.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="js/create.js" type="text/javascript"></script>
+		<script src="js/jscolor.min.js" type="text/javascript"></script>
+	</head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-    <title>CWB Ecard Generator</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#ffc40d">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" type="text/css" href="css/picnic.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/card.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/create.js" type="text/javascript"></script>
-    <script src="js/jscolor.min.js" type="text/javascript"></script>
-  </head>
+	<body onload="load_ready()">
+		<img src="logo.png" width="300" />
+		<h2>Send a beautiful Free e-card</h2>
+		<p>
+			Send a card to someone doing something for nature, big or small. Sending
+			e-cards is free and , but donations are welcome. All donations go to help
+			finding solutions to the systemic issues affecting migratory species and
+			us. We share our experiences with all subscribers through our
+			e-newsletter.
+		</p>
+		<button
+			onclick="window.location.href='https://www.conservation-without-borders.org/make-a-donation';"
+			style="border: 1px solid black; margin-right: 5px"
+		>
+			Make a donation
+		</button>
 
-  <body onload="load_ready()">
+		<!-- collumn -->
 
-      <img src="logo.png" width="300">
-      <h2>Send a beautiful Free e-card</h2>
-      <p>
-        Send a card to someone doing something for nature, big or small.
-        Sending e-cards is free and , but donations are welcome. All donations go to help finding solutions to the systemic issues affecting migratory species and us. We share our experiences with all subscribers through our e-newsletter.</p>
-        <button
-        onclick="window.location.href='https://www.conservation-without-borders.org/make-a-donation';"
-        style="border:1px solid black;margin-right:5px">
-        Make a donation
-    </button>
+		<div class="wrapper">
+			<div class="column">
+				<div id="create">
+					<h2>Design your card</h2>
+					<textarea
+						id="message"
+						rows="5"
+						cols="20"
+						placeholder="Write your personal message here."
+						onchange="show_preview()"
+						onkeyup="show_preview()"
+					></textarea
+					><br />
+					<input
+						type="text"
+						id="recipient"
+						size="25"
+						placeholder="Recipient Name"
+						onchange="show_preview()"
+						onkeyup="show_preview()"
+					/><br />
+					<input
+						type="text"
+						id="sender"
+						size="25"
+						placeholder="Sender Name"
+						onchange="show_preview()"
+						onkeyup="show_preview()"
+					/><br />
+					<input
+						type="text"
+						id="image_url"
+						size="25"
+						placeholder="Image url"
+						onchange="show_preview()"
+						onkeyup="show_preview()"
+					/><br />
+					<h4>The trio of puffins – by Steve Cole</h4>
+					<h5>
+						Colourful and charismatic, could the plucky puffins be speaking to
+						us?
+					</h5>
+					<p>
+						The decline in puffin numbers is alerting us to several imbalances
+						nature. The small sand eels they eat are reducing in number and
+						shifting range due to warming oceans and over-fishing. And the
+						recent explosion of bird flu has hit seabirds like the puffin hard,
+						and combined with plastic pollution and oil spills they’ve had a
+						hard time. Their history tells us something else. As well as being
+						terrifically fun to watch, puffins are apparently also tasty, and
+						easy to catch, but many populations recovered from hunting in
+						centuries past, once they were protected. That’s the puffins showing
+						us that if we bother to listen to the alarms, we can find solutions.
+					</p>
+					<div id="select_ic">&nbsp;</div>
 
-    <!-- collumn -->
-    <div class="row">
-      <div class="column">
-
-      <div id="create">
-      <h2>Design your card</h2>
-      <textarea id="message" rows=5 cols=20 placeholder="Write your personal message here." onchange="show_preview()" onkeyup="show_preview()"></textarea><br>
-      <input type="text" id="recipient" size="25" placeholder="Recipient Name" onchange="show_preview()" onkeyup="show_preview()"><br>
-      <input type="text" id="sender" size="25" placeholder="Sender Name" onchange="show_preview()" onkeyup="show_preview()"><br>
-      <input type="text" id="image_url" size="25" placeholder="Image url" onchange="show_preview()" onkeyup="show_preview()"><br>
-      <h4>The trio of puffins – by Steve Cole</h4>
-      <h5>Colourful and charismatic, could the plucky puffins be speaking to us?</h5>
-        <p>
-        
-        The decline in puffin numbers is alerting us to several imbalances nature. The small sand eels they eat are reducing in number and shifting range due to warming oceans and over-fishing. And the recent explosion of bird flu has hit seabirds like the puffin hard, and combined with plastic pollution and oil spills they’ve had a hard time.
-        
-        Their history tells us something else. As well as being terrifically fun to watch, puffins are apparently also tasty, and easy to catch, but many populations recovered from hunting in centuries past, once they were protected.
-        
-        That’s the puffins showing us that if we bother to listen to the alarms, we can find solutions.</p>
-      <div id="select_ic">&nbsp;</div>
-
-      <!-- <button
+					<!-- <button
           class="jscolor {valueElement:'chosen_value',value:'FFF',onFineChange:'setTextColor(this)'}"
           style="border:1px solid black;margin-right:5px">
           Pick card background color
       </button> -->
-      <!-- HEX value: <span id="chosen_value">&nbsp;</span> -->
-      <script>
-        function setTextColor(picker) {
-          document.getElementById('card_container').style.backgroundColor = '#' + picker.toString();
-          show_preview();
-        }
-      </script>
+					<!-- HEX value: <span id="chosen_value">&nbsp;</span> -->
+					<script>
+						function setTextColor(picker) {
+							document.getElementById("card_container").style.backgroundColor =
+								"#" + picker.toString();
+							show_preview();
+						}
+					</script>
 
-      <div id="select_bg">&nbsp;</div>
-    </div>
+					<div id="select_bg">&nbsp;</div>
+				</div>
 
-    <!-- <button type="button" onclick="toggle_preview()">Toggle preview</button> -->
+				<!-- <button type="button" onclick="toggle_preview()">Toggle preview</button> -->
 
-    <div class="modal">
-      <input id="modal_1" type="checkbox">
-      <label for="modal_1" class="overlay"></label>
-      <article>
-        <header>
-          <h3>Import</h3>
-          <label for="modal_1" class="close">×</label>
-        </header>
-        <section class="content">
-          <p>Have a card URL or code from another Open Ecard Generator instance? You can import it and view it here! Just paste the original URL in the box below and press the button to view your card.</p>
+				<div class="modal">
+					<input id="modal_1" type="checkbox" />
+					<label for="modal_1" class="overlay"></label>
+					<article>
+						<header>
+							<h3>Import</h3>
+							<label for="modal_1" class="close">×</label>
+						</header>
+						<section class="content">
+							<p>
+								Have a card URL or code from another Open Ecard Generator
+								instance? You can import it and view it here! Just paste the
+								original URL in the box below and press the button to view your
+								card.
+							</p>
 
-          <input type="text" id="import_url" size="25" placeholder="URL or code"><br><button onclick="import_card()">View card!</button>
-        </section>
-      </article>
-    </div>
+							<input
+								type="text"
+								id="import_url"
+								size="25"
+								placeholder="URL or code"
+							/><br /><button onclick="import_card()">View card!</button>
+						</section>
+					</article>
+				</div>
 
-    <!-- <div class="modal">
+				<!-- <div class="modal">
       <input id="modal_2" type="checkbox">
       <label for="modal_2" class="overlay"></label>
       <article>
@@ -106,29 +157,24 @@
       </article>
     </div> -->
 
-    <div id="card_url">&nbsp;</div>
-  </span>
-</div>
+				<div id="card_url">&nbsp;</div>
+			</div>
 
-</div>
-<div class="column">
+			<div class="column">
+				<div id="preview_container">
+					<h2>Preview card</h2>
+					<div id="card_container">
+						<div id="preview">
+							<center>
+								<img id="card_image" /><br />
+								<p id="message_preview">&nbsp;</p>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div id="preview_container">
-      <h2>Preview card</h2>
-      <div id="card_container">
-        <div id="preview">
-          <center>
-            <img id="card_image"/><br>
-            <p id="message_preview">&nbsp;</p>
-          </center>
-        </div>
-      </div>
-  </div>
-  
-</div>
-</div>
-
-    <footer>
-    </footer>
-  </body>
+		<footer></footer>
+	</body>
 </html>
